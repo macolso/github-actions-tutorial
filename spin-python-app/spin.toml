@@ -1,0 +1,14 @@
+spin_manifest_version = "1"
+authors = ["macolso <mackenzie.olson@fermyon.com>"]
+description = "A simple Spin app written in Python"
+name = "spin-python-app"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "spin-python-app"
+source = "app.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "spin py2wasm app -o app.wasm"
